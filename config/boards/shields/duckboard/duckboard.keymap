@@ -30,6 +30,40 @@
                 tap-ms = <40>;
                 bindings = <&kp NUMBER_0>, <&kp NUMBER_0>, <&kp NUMBER_0>;
             };
+
+            prths: parentheses {
+                label = "PARENTHESES";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                      = <&kp LPAR KP RPAR>
+                      , <&kp LEFT>
+            };
+
+            dqts: double_quotes {
+                label = "DOUBLE_QUOTES";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                      = <&kp DQT KP DQT>
+                      , <&kp LEFT>
+            };
+
+            sqts: single_quotes {
+                label = "SINGLE_QUOTES";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                      = <&kp SQT KP SQT>
+                      , <&kp LEFT>
+            };
+
             Kor: Kor {
                 label = "Kor";
                 compatible = "zmk,behavior-macro";
