@@ -210,8 +210,8 @@
          apps_layer {
              bindings = <
                 &none              &trans           &kp F13          &kp F14  &kp F15
-                &none              &kp F16          &kp F17          &kp F18  &kp K_UNDO
-                &none              &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &kp K_REDO
+                &none              &kp F16          &kp F17          &kp K_CALC  &kp K_UNDO
+                &none              &prts            &mt dqts sqts    &rgb_ug RGB_BRD  &kp K_REDO
                 &ext_power EP_TOG  &Kor             &EngUK           &mt JP LANG_ZENKAKUHANKAKU              &kp ENTER
                 &trans             &kp K_CUT        &kp K_COPY       &kp K_PASTE      &none
             >;
