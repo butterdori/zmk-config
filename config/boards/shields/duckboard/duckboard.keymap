@@ -38,7 +38,7 @@
                 #binding-cells = <0>;
                 wait-ms = <40>;
                 tap-ms = <40>;
-                bindings = <&kp NUMBER_0>, <&kp NUMBER_0>, <&kp NUMBER_0>;
+                bindings = <&kp NUMBER_0 &kp NUMBER_0 &kp NUMBER_0>;
             };
 
             prths: parentheses {
@@ -48,7 +48,7 @@
                 wait-ms = <40>;
                 tap-ms = <40>;
                 bindings
-                      = <&kp LPAR KP RPAR>
+                      = <&kp LPAR &kp RPAR>
                       , <&kp LEFT>
             };
 
@@ -59,7 +59,7 @@
                 wait-ms = <40>;
                 tap-ms = <40>;
                 bindings
-                      = <&kp DQT KP DQT>
+                      = <&kp DQT &kp DQT>
                       , <&kp LEFT>
             };
 
@@ -70,7 +70,7 @@
                 wait-ms = <40>;
                 tap-ms = <40>;
                 bindings
-                      = <&kp SQT KP SQT>
+                      = <&kp SQT &kp SQT>
                       , <&kp LEFT>
             };
         };
