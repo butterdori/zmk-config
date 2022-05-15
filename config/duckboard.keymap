@@ -38,6 +38,14 @@
           bindings = <&mt LC(LS(N1)) LANG_ZENKAKUHANKAKU>, <&kp LC(LS(N2))>, <&kp LC(LS(N3))>;
       };
 
+      qts:quotes {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <200>;
+          bindings = <&dqts>, <&sqts>;
+      };
+
   };
 
     macros {
@@ -172,7 +180,7 @@
                &none            &trans           &kp F13          &kp F14          &kp F15
                &none            &kp F16          &kp F17          &kp K_CALC       &kp K_UNDO
                &none            &tap_dance_lang  &kp LA(N2)       &kp LA(N3)       &kp ENTER
-               &kp C_MUTE       &prts            &mt dqts sqts    &kp LG(LS(RIGHT))  &kp K_REDO
+               &kp C_MUTE       &prts 0 0        &qts             &kp LG(LS(RIGHT))  &kp K_REDO
                &trans           &kp K_CUT        &kp K_COPY       &kp K_PASTE      &none
            >;
 
