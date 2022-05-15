@@ -205,7 +205,7 @@
                 &none           &trans           &kp F13          &kp F14          &kp F15
                 &none           &kp KP_N7        &kp KP_N8        &kp KP_N9        &kp LC(PG_UP)
                 &none           &kp KP_N4        &kp KP_N5        &kp KP_N6        &kp LC(PG_DN)
-                &kp C_MUTE      &kp KP_N1        &kp KP_N2        &kp kp_N3        &kp LC(LS(ENTER))
+                &kp C_MUTE      &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp LC(LS(ENTER))
                 &trans          &kp KP_N0        &kp KP_N0        &kp DOT          &none
             >;
 
