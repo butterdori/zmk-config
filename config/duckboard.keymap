@@ -58,7 +58,7 @@
                 tap-ms = <40>;
                 bindings
                       = <&kp LPAR &kp RPAR>
-                      , <&kp LEFT>
+                      , <&kp LEFT>;
             };
 
             dqts: double_quotes {
@@ -69,7 +69,7 @@
                 tap-ms = <40>;
                 bindings
                       = <&kp DQT &kp DQT>
-                      , <&kp LEFT>
+                      , <&kp LEFT>;
             };
 
             sqts: single_quotes {
@@ -80,7 +80,7 @@
                 tap-ms = <40>;
                 bindings
                       = <&kp SQT &kp SQT>
-                      , <&kp LEFT>
+                      , <&kp LEFT>;
             };
         };
 
