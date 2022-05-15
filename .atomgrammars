@@ -3,3 +3,4 @@ config\boards\shields\duckboard\duckboard.conf//source.c
 config\boards\shields\duckboard\duckboard.overlay//source.c
 config\boards\nice_nano_v2.overlay//source.c
 config\duckboard.keymap//source.c
+config\duckboard.overlay//source.c
