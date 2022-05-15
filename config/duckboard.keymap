@@ -12,13 +12,33 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/led/led.h>
 
-#define DEFAULT 0
-#define FUNC 1
+#define CALC 0
+#define APPS 1
 #define RGB_BT 2
+#define GAME 3
 
 #define TIMEOUT 200
 
 / {
+
+    behaviors {
+      td0: tap_dance_0 {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_0";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&to DEFAULT>, <&to APPS>, <&to GAME>;
+      };
+
+      td_lang: tap_dance_lang {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_LANG";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&mt kp LC(LS(N1)) LANG_ZENKAKUHANKAKU>, <<&kp LC(LS(N2))>, <<&kp LC(LS(N3))>;
+      };
+
+  };
 
     macros {
             triple_zero: triple_zero {
@@ -27,10 +47,43 @@
                 #binding-cells = <0>;
                 wait-ms = <40>;
                 tap-ms = <40>;
-                bindings = <&kp NUMBER_0>, <&kp NUMBER_0>, <&kp NUMBER_0>;
+                bindings = <&kp NUMBER_0 &kp NUMBER_0 &kp NUMBER_0>;
+            };
+
+            prths: parentheses {
+                label = "PARENTHESES";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                      = <&kp LPAR &kp RPAR>
+                      , <&kp LEFT>
+            };
+
+            dqts: double_quotes {
+                label = "DOUBLE_QUOTES";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                      = <&kp DQT &kp DQT>
+                      , <&kp LEFT>
+            };
+
+            sqts: single_quotes {
+                label = "SINGLE_QUOTES";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <40>;
+                tap-ms = <40>;
+                bindings
+                      = <&kp SQT &kp SQT>
+                      , <&kp LEFT>
             };
         };
-    
+
     combos {
         compatible = "zmk,combos";
         combo_bootloader {
@@ -84,7 +137,7 @@
         combo_layer1 {
             timeout-ms = <TIMEOUT>;
             key-positions = <1 17>;
-            bindings = <&to FUNC>;
+            bindings = <&to APPS>;
         };
         combo_layer2 {
             timeout-ms = <TIMEOUT>;
@@ -94,48 +147,62 @@
 
         combo_rgb {
             timeout-ms = <TIMEOUT>;
-            key-positions = <1 22>;
+            key-positions = <1 21>;
             bindings = <&rgb_ug RGB_TOG>;
-        };        
+        };
     };
-    
+
     keymap {
         compatible = "zmk,keymap";
-        
+
         default_layer {
             bindings = <
-                &none           &to FUNC       &kp SLASH      &kp ASTERISK    &kp MINUS
+                &none           &to DEFAULT    &kp ASTERISK   &kp SLASH       &kp ESC
                 &none           &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9    &kp PLUS
-                &none           &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6    &kp PLUS
+                &none           &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6    &kp MINUS
                 &kp C_MUTE      &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3    &kp ENTER
-                &kp BACKSPACE   &kp NUMBER_0   &triple_zero   &kp DOT         &kp ENTER
+                &td0            &kp NUMBER_0   &triple_zero   &mt KP_COMMA KP_DOT     &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-         func_layer {
-             bindings = <
-                &none           &to DEFAULT    &trans        &trans          &kp BACKSPACE
-                &none           &kp HOME       &kp UP        &kp PG_UP       &kp PLUS
-                &none           &kp LEFT       &kp DOWN      &kp RIGHT       &kp PLUS
-                &kp C_MUTE      &kp END        &kp DOWN      &kp PG_DN       &kp ENTER
-                &to RGB_BT      &kp INS        &kp INS       &kp DEL         &kp ENTER
-            >;
+        apps_layer {
+            bindings = <
+               &none              &trans           &kp F13          &kp F14          &kp F15
+               &none              &kp F16          &kp F17          &kp K_CALC       &kp K_UNDO
+               &none              &tap_dance_lang  &kp LA(N2)       &kp LA(N3)       &kp ENTER
+               &kp C_MUTE         &prts            &mt dqts sqts    &kp LG(LS(RIGHT))  &kp K_REDO
+               &trans             &kp K_CUT        &kp K_COPY       &kp K_PASTE      &none
+           >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-         };
+           sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
 
-         rgb_bt_layer {
+        rgb_bt_layer {
              bindings = <
-                &none              &to FUNC         &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI
+                &none              &trans           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI
                 &none              &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD
                 &none              &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD
                 &ext_power EP_TOG  &none            &none            &none            &none
-                &to FUNC           &none            &none            &none            &none
+                &trans             &none            &none            &none            &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
          };
+
+
+         game_layer {
+             bindings = <
+                &none              &trans           &kp F13          &kp F14          &kp F15
+                &none              &kp F16          &kp F17          &kp K_CALC       &kp K_UNDO
+                &none              &tap_dance_lang  &LA(N2)          &kp N1       &kp ENTER
+                &ext_power EP_TOG  &prts            &mt dqts sqts    &kp LG(LS(RIGHT))  &kp K_REDO
+                &trans             &kp K_CUT        &kp K_COPY       &kp K_PASTE      &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+         };
+
     };
 };
