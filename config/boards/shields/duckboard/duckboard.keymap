@@ -40,6 +40,7 @@
 
       qts:quotes {
           compatible = "zmk,behavior-hold-tap";
+          label = "QUOTATION_MARKS";
           #binding-cells = <2>;
           flavor = "hold-preferred";
           tapping-term-ms = <200>;
