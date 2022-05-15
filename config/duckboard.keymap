@@ -27,7 +27,7 @@
           label = "TAP_DANCE_0";
           #binding-cells = <0>;
           tapping-term-ms = <200>;
-          bindings = <&to DEFAULT>, <&to APPS>, <&to GAME>;
+          bindings = <&to CALC>, <&to APPS>, <&to GAME>;
       };
 
       td_lang: tap_dance_lang {
@@ -132,7 +132,7 @@
         combo_layer0 {
             timeout-ms = <TIMEOUT>;
             key-positions = <1 16>;
-            bindings = <&to DEFAULT>;
+            bindings = <&to CALC>;
         };
         combo_layer1 {
             timeout-ms = <TIMEOUT>;
@@ -155,9 +155,9 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        calc_layer {
             bindings = <
-                &none           &to DEFAULT    &kp ASTERISK   &kp SLASH       &kp ESC
+                &none           &to CALC       &kp ASTERISK   &kp SLASH       &kp ESC
                 &none           &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9    &kp PLUS
                 &none           &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6    &kp MINUS
                 &kp C_MUTE      &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3    &kp ENTER
