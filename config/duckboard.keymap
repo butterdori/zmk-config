@@ -202,7 +202,7 @@
                 &none              &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD
                 &none              &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD
                 &ext_power EP_TOG  &none            &none            &none            &none
-                &trans             &none            &none            &none            &none
+                &trans             &td1             &td0             &none            &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
