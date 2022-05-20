@@ -34,7 +34,7 @@
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_LANG";
           #binding-cells = <0>;
-          tapping-term-ms = <200>;
+          tapping-term-ms = <500>;
           bindings = <&kp LC(LS(NUMBER_1))>, <&kp LC(LS(N2))>, <&kp LC(LS(N3))>;
       };
 
