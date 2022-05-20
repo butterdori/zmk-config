@@ -18,7 +18,7 @@ A ZMK-based firmware for bluetooth wireless version of [Duckboard](https://doodb
 - Parentheses and quotations enter both endings and presses the left arrow key once, placing you in the middle. 
 - Win+Shift+Left arrow key moves the selected window to your right monitor (if already in the right monitor, it goes to the left monitor). 
 - Ext Power Toggle is used when the OLED is not functioning, which can happen due to current limitations in ZMK displays. 
-- Number keys for layer 2 are keypad keys, and thus should be used in conjunctino with Num Lock.
+- Number keys for layer 2 are keypad keys, and thus should be used in conjunction with Num Lock.
 
 Red: Tap  
 Blue: Hold
