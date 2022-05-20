@@ -162,8 +162,8 @@
 
         combo_JPKey {
             timeout-ms = <TIMEOUT>;
-            key-positions = <1 21>;
-            bindings = <&rgb_ug RGB_TOG>;
+            key-positions = <11 13>;
+            bindings = <&kp LANG_ZENKAKUHANKAKU>;
         };
 
     };
