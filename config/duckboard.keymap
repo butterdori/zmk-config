@@ -178,7 +178,7 @@
                 &none           &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9    &kp PLUS
                 &none           &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6    &kp MINUS
                 &kp C_MUTE      &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3    &kp ENTER
-                &td1            &kp NUMBER_0   &triple_zero   &mt KP_COMMA KP_DOT     &kp ENTER
+                &td0            &kp NUMBER_0   &triple_zero   &mt KP_COMMA KP_DOT     &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -212,9 +212,9 @@
          game_layer {
              bindings = <
                 &none           &trans           &kp F13          &kp F14          &kp F15
-                &none           &kp KP_N7        &kp KP_N8        &kp KP_N9        &kp LC(PG_UP)
-                &none           &kp KP_N4        &kp KP_N5        &kp KP_N6        &kp LC(PG_DN)
-                &kp C_MUTE      &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp LC(LS(ENTER))
+                &none           &td1             &td1             &kp KP_N9        &kp LC(PG_UP)
+                &none           &td1             &td1             &td1             &kp LC(PG_DN)
+                &kp C_MUTE      &td1             &kp KP_N2        &kp KP_N3        &kp LC(LS(ENTER))
                 &trans          &kp KP_N0        &kp KP_N0        &kp DOT          &none
             >;
 
