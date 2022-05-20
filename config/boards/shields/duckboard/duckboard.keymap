@@ -35,7 +35,7 @@
           label = "TAP_DANCE_LANG";
           #binding-cells = <0>;
           tapping-term-ms = <200>;
-          bindings = <&mt LC(LS(N1)) LANG_ZENKAKUHANKAKU>, <&kp LC(LS(N2))>, <&kp LC(LS(N3))>;
+          bindings = <&mt LC(LS(NUMBER_1)) LANG_ZENKAKUHANKAKU>, <&kp LC(LS(N2))>, <&kp LC(LS(N3))>;
       };
 
       qts:quotes {
@@ -180,7 +180,7 @@
             bindings = <
                &none            &trans           &kp F13          &kp F14          &kp F15
                &none            &kp F16          &kp F17          &kp K_CALC       &kp K_UNDO
-               &none            &td_lang         &kp LA(N2)       &kp LA(N3)       &kp ENTER
+               &none            &td_lang         &kp LC(LS(NUMPER_2))   &kp LC(LS(NUMBER_3))   &kp ENTER
                &kp C_MUTE       &prts            &qts 0 0         &kp LG(LS(RIGHT))  &kp K_REDO
                &trans           &kp K_CUT        &kp K_COPY       &kp K_PASTE      &none
            >;
