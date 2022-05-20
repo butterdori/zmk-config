@@ -14,8 +14,8 @@
 
 #define CALC 0
 #define APPS 1
-#define RGB_BT 2
-#define GAME 3
+#define GAME 2
+#define RGB_BT 3
 
 #define TIMEOUT 200
 
@@ -111,19 +111,16 @@
             timeout-ms = <TIMEOUT>;
             key-positions = <1 6>;
             bindings = <&bt BT_NXT>;
-            layers = <2>;
         };
         combo_btprv {
             timeout-ms = <TIMEOUT>;
             key-positions = <1 7>;
             bindings = <&bt BT_PRV>;
-            layers = <2>;
         };
         combo_btclr {
             timeout-ms = <TIMEOUT>;
             key-positions = <1 8>;
             bindings = <&bt BT_CLR>;
-            layers = <2>;
         };
 
         combo_layer0 {
@@ -171,7 +168,7 @@
                 &none           &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9    &kp PLUS
                 &none           &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6    &kp MINUS
                 &kp C_MUTE      &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3    &kp ENTER
-                &td0            &kp NUMBER_0   &triple_zero   &mt KP_COMMA KP_DOT     &kp ENTER
+                &td0            &kp NUMBER_0   &triple_zero   &mt COMMA DOT   &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -179,11 +176,23 @@
 
         apps_layer {
             bindings = <
-               &none            &trans           &kp F13          &kp F14          &kp F15
+               &none            &to CALC         &kp F13          &kp F14          &kp F15
                &none            &kp F16          &kp F17          &kp K_CALC       &kp LC(PG_UP)
                &none            &kp LC(LS(NUMBER_1)) &kp LC(LS(NUMBER_2))  &kp LC(LS(NUMBER_3))   &kp LC(PG_DN)
                &kp C_MUTE       &prts            &qts 0 0         &kp LG(LS(RIGHT))  &kp ENTER
                &trans           &kp LC(X)        &kp LC(C)        &kp LC(V)        &none
+           >;
+
+           sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        game_layer {
+            bindings = <
+               &none           &trans           &kp F13          &kp F14          &kp F15
+               &none           &td1             &td1             &kp KP_N9        &kp LC(PG_UP)
+               &none           &td1             &td1             &td1             &kp LC(PG_DN)
+               &kp C_MUTE      &td1             &kp KP_N2        &kp KP_N3        &kp LC(LS(ENTER))
+               &trans          &kp KP_N0        &kp KP_N0        &kp DOT          &none
            >;
 
            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -196,19 +205,6 @@
                 &none              &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD
                 &ext_power EP_TOG  &none            &none            &none            &none
                 &trans             &td1             &td0             &none            &none
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-         };
-
-
-         game_layer {
-             bindings = <
-                &none           &trans           &kp F13          &kp F14          &kp F15
-                &none           &td1             &td1             &kp KP_N9        &kp LC(PG_UP)
-                &none           &td1             &td1             &td1             &kp LC(PG_DN)
-                &kp C_MUTE      &td1             &kp KP_N2        &kp KP_N3        &kp LC(LS(ENTER))
-                &trans          &kp KP_N0        &kp KP_N0        &kp DOT          &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
