@@ -34,8 +34,9 @@
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_LANG";
           #binding-cells = <0>;
-          tapping-term-ms = <500>;
-          bindings = <&kp LC(LS(NUMBER_1))>, <&kp LC(LS(N2))>, <&kp LC(LS(N3))>;
+          tapping-term-ms = <200>;
+          bindings = <&mt B A>, <&kp C>, <&kp D>;
+          #bindings = <&kp LC(LS(NUMBER_1))>, <&kp LC(LS(N2))>, <&kp LC(LS(N3))>;
       };
 
       qts:quotes {
