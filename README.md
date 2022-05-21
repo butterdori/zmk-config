@@ -26,13 +26,13 @@ Blue: Hold
 ![Layers](images/layers.png)
 
 **Combo keys (usable in all layers; layer 0 assignments):**  
-Num Lock + ESC: Boot to bootloader (install firmware)  
-Num Lock + /: Reset  
-Num Lock + 7: Next Bluetooth profile (max 3 devices; can be changed)  
-Num Lock + 8: Previous Bluetooth profile  
-Num Lock + 9: Clear Bluetooth profiles  
-Num Lock + 1: Switch to calc layer (0)  
-Num Lock + 2: Switch to apps layer (1)  
-Num Lock + 3: Switch to game layer (2)  
-Num Lock + 4: Switch to RGB & Bluetooth layer (3)  
-Num Lock + 0: Toggle RGB  
+F19 + ESC: Boot to bootloader (install firmware)  
+F19 + /: Reset  
+F19 + 7: Next Bluetooth profile (max 3 devices; can be changed)  
+F19 + 8: Previous Bluetooth profile  
+F19 + 9: Clear Bluetooth profiles  
+F19 + 1: Switch to calc layer (0)  
+F19 + 2: Switch to apps layer (1)  
+F19 + 3: Switch to game layer (2)  
+F19 + 4: Switch to RGB & Bluetooth layer (3)  
+F19 + 0: Toggle RGB  
