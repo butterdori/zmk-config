@@ -11,12 +11,12 @@ A ZMK-based firmware for bluetooth wireless version of [Duckboard](https://doodb
 
 ## Layout
 - The firmware consists of 4 layers: Layer 0 - Calc; Layer 1 - Apps and Func; Layer 2 - Game; Layer 3 - RGB and Bluetooth.
-- Assigning F19 as a shortcut to calculator means double tapping the key switches the layer to the calcaultor layout and launches calculator. 
+- Assigning F19 as a shortcut to calculator means double tapping the key switches the layer to the calculator layout and launches calculator. 
 - F13~F18 can be assigned to other programs, or used as you see fit. 
 - Ctrl+Pg Up/Dn can be used to move between tabs in the browser. 
 - Lang 1/2/3 keys are actually Ctrl+Shift+1/2/3, which can be assigned to the different language keyboards you are using. 
 - Parentheses and quotations enter both endings and presses the left arrow key once, placing you in the middle. 
-- Win+Shift+Left arrow key moves the selected window to your right monitor (if already in the right monitor, it goes to the left monitor). 
+- Win+Shift+Right arrow key moves the selected window to your right monitor (if already in the right monitor, it goes to the left monitor). 
 - Ext Power Toggle is used when the OLED is not functioning, which can happen due to current limitations in ZMK displays. 
 - Number keys for layer 2 are keypad keys, and thus should be used in conjunction with Num Lock.
 
