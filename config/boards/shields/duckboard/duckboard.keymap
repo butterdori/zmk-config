@@ -192,7 +192,7 @@
                &none           &kp KP_N7      &kp KP_N8      &kp KP_N9        &kp LC(PG_UP)
                &none           &kp KP_N4      &kp KP_N5      &kp KP_N6        &kp LC(PG_DN)
                &kp C_MUTE      &kp KP_N1      &kp KP_N2      &kp KP_N3        &kp LC(LS(ENTER))
-               &trans          &kp KP_NUMLOCK &kp KP_N0      &kp DOT          &kp ENTER
+               &trans          &kp KP_NUMLOCK &kp KP_N0      &kp DOT          &kp LC(LS(ENTER))
            >;
 
            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -204,7 +204,7 @@
                 &none              &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD
                 &none              &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD
                 &trans             &bt BT_NXT       &bt BT_PRV       &bt BT_CLR       &ext_power EP_TOG
-                &trans             &none            &none            &none            &none
+                &trans             &none            &none            &none            &ext_power EP_TOG
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
