@@ -14,7 +14,7 @@ A ZMK-based firmware for bluetooth wireless version of [Duckboard](https://doodb
 - Assigning F19 as a shortcut to calculator means double tapping the key switches the layer to the calculator layout and launches calculator. 
 - F13~F18 can be assigned to other programs, or used as you see fit. 
 - Ctrl+Pg Up/Dn can be used to move between tabs in the browser. 
-- Lang 1/2/3 keys are actually Ctrl+Shift+1/2/3, which can be assigned to the different language keyboards you are using. 
+- Lang 1/2/3 keys are actually Ctrl+Shift+1/2/3, which can be assigned to the different language keyboards you are using. Since Windows 7, there is an unfixed bug where the assigned key sequences for language keyboards are erased for random reasons (sleep, log out, shutdown etc.). There is a way to fix this [here]([url](https://superuser.com/questions/958901/set-shortcuts-to-change-keyboard-layout-in-windows-10)).
 - Parentheses and quotations enter both endings and presses the left arrow key once, placing you in the middle. 
 - Win+Shift+Right arrow key moves the selected window to your right monitor (if already in the right monitor, it goes to the left monitor). 
 - Ext Power Toggle is used when the OLED is not functioning, which can happen due to current limitations in ZMK displays. 
