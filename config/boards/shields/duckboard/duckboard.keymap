@@ -219,7 +219,7 @@
 
         ORTHO_L {
             bindings = <
-               &none           &to T      &kp G      &kp B       &kp SPACE
+               &none           &kp T      &kp G      &kp B       &kp SPACE
                &none           &kp R      &kp F      &kp V       &kp LALT
                &none           &kp E      &kp D      &kp C       &kp LWIN
                &trans          &kp W      &kp S      &kp X       &kp LCTRL
