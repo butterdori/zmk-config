@@ -16,6 +16,7 @@
 #define APPS 1
 #define GAME 2
 #define RGB_BT 3
+#define ORTHO_L 4
 
 #define TIMEOUT 200
 
@@ -145,6 +146,12 @@
             bindings = <&to RGB_BT>;
         };
 
+        combo_layer4 {
+            timeout-ms = <TIMEOUT>;
+            key-positions = <1 12>;
+            bindings = <&to ORTHO_L>;
+        };
+
         combo_rgb {
             timeout-ms = <TIMEOUT>;
             key-positions = <1 21>;
@@ -205,6 +212,15 @@
                 &none          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD
                 &trans         &bt BT_NXT       &bt BT_PRV       &bt BT_CLR       &ext_power EP_TOG
                 &trans         &none            &none            &none            &none
+            >;
+
+        ORTHO_L {
+            bindings = <
+               &none           &to T      &kp G      &kp B       &kp SPACE
+               &none           &kp R      &kp F      &kp V       &kp LALT
+               &none           &kp E      &kp D      &kp C       &kp LWIN
+               &trans          &kp W      &kp S      &kp X       &kp LCTRL
+               &trans          &kp Q      &kp A      &kp Z       &kp LCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
