@@ -214,6 +214,9 @@
                 &trans         &none            &none            &none            &none
             >;
 
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
         ORTHO_L {
             bindings = <
                &none           &to T      &kp G      &kp B       &kp SPACE
