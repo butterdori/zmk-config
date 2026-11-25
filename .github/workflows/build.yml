@@ -1,6 +1,10 @@
-on: [push, pull_request, workflow_dispatch]
-
+name: Build Duckboard beta
+on:
+  push:
+    branches: [beta]
+  pull_request:
+    branches: [beta]
+  workflow_dispatch:
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-   #uses: butterdori/zmk-170522/.github/workflows/build-user-config.yml@main
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0

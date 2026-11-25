@@ -1,0 +1,7 @@
+# Duckboard v0.3.0-beta1
+
+Overlay for butterdori/zmk-config master. Extract into the existing repository on branch beta; do not extract into an empty directory. Other original files, including any board-specific RGB overlays, remain in place. Upstream ZMK is pinned to v0.3.0 in both manifest and workflow. No firmware binary is included. GitHub Actions must compile it before flashing.
+
+Five original layers, all 125 matrix bindings, 12 combos, four macros, encoder direction, and Esc tap/hold are retained. Combo windows: 75 ms except bootloader/reset at 200 ms; macros 15 ms tap and wait; debounce 1/5 ms. Native function layer intentionally not introduced: it would change cross-layer and reverse-order combo semantics. The bootloader and reset combos can still defer their participating keys for up to 200 ms. Tap dance and hold-tap terms unchanged. Encoder 40 steps / 20 triggers is provisional, preserving old 2:1 ratio; verify one volume increment per detent. OLED inversion retained in DTS; old backlight auto-off settings removed (not RGB settings). The two keymap/config copies are synchronized to avoid divergence. Existing board-specific files are not modified.
+
+Not build-tested. Check all GitHub Actions diagnostics, then test USB, Bluetooth, all five layers, F19 + Esc bootloader, rotary encoder, OLED and RGB. Keep your previous working UF2 available for rollback. If 75 ms combos are difficult, change TIMEOUT in both keymaps to 100 or 200. If macro repetition fails, restore 40 ms. If chatter occurs, restore press debounce to 5 ms.
