@@ -16,10 +16,31 @@
 #define RGB_BT 3
 #define ORTHO_L 4
 #define TIMEOUT 75
-#define RECOVERY_TIMEOUT 200
+#define FN 5
 
 / {
     behaviors {
+        fn_key: fn_key {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
+        fn_return: fn_return {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&to>;
+        };
+        fn_ortho: fn_ortho {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -72,61 +93,6 @@
     };
     combos {
         compatible = "zmk,combos";
-        combo_bootloader {
-            timeout-ms = <RECOVERY_TIMEOUT>;
-            key-positions = <1 4>;
-            bindings = <&bootloader>;
-        };
-        combo_reset {
-            timeout-ms = <RECOVERY_TIMEOUT>;
-            key-positions = <1 3>;
-            bindings = <&sys_reset>;
-        };
-        combo_btnxt {
-            timeout-ms = <TIMEOUT>;
-            key-positions = <1 6>;
-            bindings = <&bt BT_NXT>;
-        };
-        combo_btprv {
-            timeout-ms = <TIMEOUT>;
-            key-positions = <1 7>;
-            bindings = <&bt BT_PRV>;
-        };
-        combo_btclr {
-            timeout-ms = <TIMEOUT>;
-            key-positions = <1 8>;
-            bindings = <&bt BT_CLR>;
-        };
-        combo_layer0 {
-            timeout-ms = <TIMEOUT>;
-            key-positions = <1 16>;
-            bindings = <&to CALC>;
-        };
-        combo_layer1 {
-            timeout-ms = <TIMEOUT>;
-            key-positions = <1 17>;
-            bindings = <&to APPS>;
-        };
-        combo_layer2 {
-            timeout-ms = <TIMEOUT>;
-            key-positions = <1 18>;
-            bindings = <&to GAME>;
-        };
-        combo_layer3 {
-            timeout-ms = <TIMEOUT>;
-            key-positions = <1 11>;
-            bindings = <&to RGB_BT>;
-        };
-        combo_layer4 {
-            timeout-ms = <TIMEOUT>;
-            key-positions = <1 12>;
-            bindings = <&to ORTHO_L>;
-        };
-        combo_rgb {
-            timeout-ms = <TIMEOUT>;
-            key-positions = <1 21>;
-            bindings = <&rgb_ug RGB_TOG>;
-        };
         combo_JPKey {
             timeout-ms = <TIMEOUT>;
             key-positions = <11 13>;
@@ -137,7 +103,7 @@
         compatible = "zmk,keymap";
         calc_layer {
             bindings = <
-                &none                      &kp F19        &kp ASTERISK   &kp SLASH       &mt ESC BACKSPACE
+                &none                      &fn_key FN F19 &kp ASTERISK   &kp SLASH       &mt ESC BACKSPACE
                 &none                      &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9    &kp PLUS
                 &none                      &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6    &kp MINUS
                 &mt LC(LA(LS(E))) C_MUTE   &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3    &kp ENTER
@@ -147,7 +113,7 @@
         };
         apps_layer {
             bindings = <
-                &none    &to CALC               &kp F13                &kp F14                          &kp F15
+                &none    &fn_return FN CALC               &kp F13                &kp F14                          &kp F15
                 &none    &kp F16                &kp F17                &kp F18                          &kp LC(PG_UP)
                 &none    &kp LC(LS(NUMBER_1))   &kp LC(LS(NUMBER_2))   &mt LA(GRAVE) LC(LS(NUMBER_3))   &kp LC(PG_DN)
                 &trans   &prts                  &qts 0 0               &kp LG(LS(RIGHT))                &kp ENTER
@@ -157,7 +123,7 @@
         };
         game_layer {
             bindings = <
-                &none    &to CALC         &kp F13     &kp F14     &kp F15
+                &none    &fn_return FN CALC         &kp F13     &kp F14     &kp F15
                 &none    &kp KP_N7        &kp KP_N8   &kp KP_N9   &kp LC(PG_UP)
                 &none    &kp KP_N4        &kp KP_N5   &kp KP_N6   &kp LC(PG_DN)
                 &trans   &kp KP_N1        &kp KP_N2   &kp KP_N3   &kp LC(LS(ENTER))
@@ -167,7 +133,7 @@
         };
         rgb_bt_layer {
             bindings = <
-                &none    &to CALC          &rgb_ug RGB_TOG   &rgb_ug RGB_EFF   &rgb_ug RGB_SPI
+                &none    &fn_return FN CALC          &rgb_ug RGB_TOG   &rgb_ug RGB_EFF   &rgb_ug RGB_SPI
                 &none    &rgb_ug RGB_HUI   &rgb_ug RGB_SAI   &rgb_ug RGB_BRI   &rgb_ug RGB_SPD
                 &none    &rgb_ug RGB_HUD   &rgb_ug RGB_SAD   &rgb_ug RGB_BRD   &rgb_ug RGB_SPD
                 &trans   &bt BT_NXT        &bt BT_PRV        &bt BT_CLR        &ext_power EP_TOG
@@ -177,11 +143,21 @@
         };
         ORTHO_L {
             bindings = <
-                &none    &kp T   &kp G   &kp B   &kp SPACE
+                &none    &fn_ortho FN T &kp G   &kp B   &kp SPACE
                 &none    &kp R   &kp F   &kp V   &kp LALT
                 &none    &kp E   &kp D   &kp C   &kp LWIN
                 &trans   &kp W   &kp S   &kp X   &kp LCTRL
                 &trans   &kp Q   &kp A   &kp Z   &kp LCTRL
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+        fn_layer {
+            bindings = <
+                &trans   &trans       &trans       &sys_reset    &bootloader
+                &trans   &bt BT_NXT   &bt BT_PRV   &bt BT_CLR    &trans
+                &trans   &to RGB_BT   &to ORTHO_L  &trans        &trans
+                &trans   &to CALC     &to APPS     &to GAME      &trans
+                &trans   &rgb_ug RGB_TOG &trans    &trans        &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
