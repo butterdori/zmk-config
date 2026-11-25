@@ -80,7 +80,7 @@
         combo_reset {
             timeout-ms = <RECOVERY_TIMEOUT>;
             key-positions = <1 3>;
-            bindings = <&reset>;
+            bindings = <&sys_reset>;
         };
         combo_btnxt {
             timeout-ms = <TIMEOUT>;
